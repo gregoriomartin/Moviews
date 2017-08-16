@@ -1,0 +1,311 @@
+<android.support.design.widget.CoordinatorLayout
+    android:id="@+id/fragment_serie_details"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_alignParentTop="true">
+
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/appbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:elevation="4dp">
+
+        <android.support.design.widget.CollapsingToolbarLayout
+            android:id="@+id/collapsing_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed|snap">
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/frameLayoutSDBackdrop">
+                <ImageView
+                    android:id="@+id/imageViewSDBackDrop"
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"/>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom"
+                    android:orientation="vertical">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Al aire"
+                        android:padding="3dp"
+                        android:textSize="12sp"
+                        android:visibility="visible"
+                        android:layout_margin="3dp"
+                        android:background="@drawable/pop_on_the_air"
+                        android:textColor="#FFFF"
+                        android:id="@+id/textViewSDOnTheAir"/>
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="start"
+                        android:background="#96000000"
+                        android:textColor="#fff"
+                        android:textSize="17sp"
+                        android:textStyle="bold"
+                        android:text="Alien: Recontra contrataca por decimo octava novena vez"
+                        android:id="@+id/textViewSDTitle"
+                        android:paddingLeft="5dp"
+                        android:paddingRight="5dp"/>
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="#96000000"
+                        android:textColor="#fff"
+                        android:textSize="12sp"
+                        android:text="Horror | Sci-Fi | ThrillerHorror"
+                        android:paddingLeft="5dp"
+                        android:paddingRight="5dp"
+                        android:paddingBottom="2dp"
+                        android:id="@+id/textViewSDGenres" />
+                </LinearLayout>
+            </FrameLayout>
+
+            <android.support.v7.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                app:layout_collapseMode="pin"
+                app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+                app:theme="@style/AppTheme"/>
+
+        </android.support.design.widget.CollapsingToolbarLayout>
+
+    </android.support.design.widget.AppBarLayout>
+
+
+    <android.support.v4.widget.NestedScrollView
+        android:id="@+id/scrolling_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                app:cardCornerRadius="2dp"
+                android:id="@+id/cardViewSDInfo"
+                android:layout_below="@+id/frameLayoutSDBackdrop"
+                tools:context="digitalhouse.android.a0317moacns1c_02.Fragments.SeriesDetailsInfoFragment">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <RelativeLayout
+                        android:id="@+id/relativeLayoutSDInfo"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_toEndOf="@+id/imageViewPoster"
+                        android:gravity="start"
+                        android:orientation="horizontal"
+                        android:padding="16dp">
+
+                        <TextView
+                            android:id="@+id/textViewSDDetails"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingBottom="12dp"
+                            android:text="Detalles"
+                            android:textSize="16sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/textViewSDNetwork"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/textViewSDDetails"
+                            android:text="Emitido por:"
+                            android:textSize="12sp" />
+
+                        <TextView
+                            android:id="@+id/textViewSDNetworkCont"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/textViewSDNetwork"
+                            android:paddingLeft="4dp"
+                            android:text="Netflix"
+                            android:textSize="12sp" />
+
+                        <TextView
+                            android:id="@+id/textViewSDLaunch"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/textViewSDNetworkCont"
+                            android:text="Primera Emisión:"
+                            android:textSize="12sp" />
+
+                        <TextView
+                            android:id="@+id/textViewSDLaunchCont"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignBottom="@id/textViewSDLaunch"
+                            android:layout_toEndOf="@id/textViewSDLaunch"
+                            android:paddingLeft="4dp"
+                            android:text="25/06/1992"
+                            android:textSize="12sp" />
+
+                        <TextView
+                            android:id="@+id/textViewSDSeasons"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/textViewSDLaunchCont"
+                            android:text="Temporadas:"
+                            android:textSize="12sp" />
+
+                        <TextView
+                            android:id="@+id/textViewSDSeasonsCont"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignBottom="@+id/textViewSDSeasons"
+                            android:layout_toEndOf="@+id/textViewSDSeasons"
+                            android:paddingLeft="4dp"
+                            android:text="18"
+                            android:textSize="12sp" />
+
+                        <TextView
+                            android:id="@+id/textViewSDChapters"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/textViewSDSeasons"
+                            android:text="Capítulos:"
+                            android:textSize="12sp" />
+
+                        <TextView
+                            android:id="@+id/textViewSDChaptersCont"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignBottom="@+id/textViewSDChapters"
+                            android:layout_toEndOf="@+id/textViewSDChapters"
+                            android:paddingLeft="4dp"
+                            android:text="95"
+                            android:textSize="12sp" />
+                    </RelativeLayout>
+
+                    <View
+                        android:id="@+id/separatorLineSD"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_below="@+id/relativeLayoutSDInfo"
+                        android:layout_toEndOf="@+id/imageViewPoster"
+                        android:background="@color/divider" />
+
+                    <LinearLayout
+                        android:id="@+id/linearLayoutSDActions"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_alignBottom="@+id/imageViewPoster"
+                        android:layout_alignLeft="@+id/separatorLineSD"
+                        android:layout_below="@+id/separatorLineSD"
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        android:paddingLeft="10dp"
+                        android:paddingRight="10dp">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:src="@drawable/ic_bookmark_black_24dp" />
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:src="@drawable/ic_favorite_black_24dp" />
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:src="@drawable/ic_share_black_24dp" />
+
+                    </LinearLayout>
+
+                    <ImageView
+                        android:id="@+id/imageViewPoster"
+                        android:layout_width="127dp"
+                        android:layout_height="191dp"
+                        android:layout_alignParentTop="true"
+                        android:layout_alignParentStart="true" />
+                </RelativeLayout>
+
+            </android.support.v7.widget.CardView>
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/framelayoutSDRatings"
+                android:layout_below="@+id/cardViewSDInfo"/>
+
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                app:cardCornerRadius="2dp"
+                android:layout_below="@+id/framelayoutSDRatings"
+                android:id="@+id/cardViewSDSummary">
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:paddingBottom="16dp"
+                    android:paddingLeft="16dp"
+                    android:paddingRight="16dp">
+                    <TextView
+                        android:id="@+id/SDSummary"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="start"
+                        android:layout_marginBottom="5dp"
+                        android:paddingBottom="12dp"
+                        android:paddingTop="16dp"
+                        android:text="Summary"
+                        android:textSize="16dp"
+                        android:textStyle="bold" />
+                    <TextView
+                        android:id="@+id/textViewSDSummary"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Set to the all-new sonic backdrop of Awesome Mixtape #2, Marvel Studios' Guardians of the Galaxy Vol. 2 continues the team's adventures as they traverse the outer reaches of the cosmos. The Guardians must fight to keep their newfound family together as they unravel the mystery of Peter Quill's true parentage. Old foes become new allies and fan-favorite characters from the classic comics will come to our heroes' aid as the Marvel Cinematic Universe continues to expand."
+                        android:textSize="12sp"/>
+                </LinearLayout>
+            </android.support.v7.widget.CardView>
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:id="@+id/frameLayoutSDMedia"
+                android:layout_below="@+id/cardViewSDSummary" />
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/frameLayoutSDCasting"
+                android:layout_below="@id/frameLayoutSDMedia" />
+
+        </LinearLayout>
+
+
+    </android.support.v4.widget.NestedScrollView>
+
+
+
+
+</android.support.design.widget.CoordinatorLayout>
